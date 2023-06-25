@@ -1,0 +1,9 @@
+<main *ngIf="menu$ | async as menu">
+    <h1>{{ menu.caption }}</h1>
+
+    <div *ngFor="let item of menu.items">
+        <hr />
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.price }}</p>
+    </div>
+</main>
