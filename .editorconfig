@@ -15,5 +15,5 @@ quote_type = single
 max_line_length = off
 trim_trailing_whitespace = false
 
-[*.yaml]
+[*.{yaml,yml}]
 indent_size = 2
