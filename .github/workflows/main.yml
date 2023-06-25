@@ -2,9 +2,9 @@ name: Web pages CI/CD
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
   workflow_dispatch:
     inputs:
       publish:
@@ -22,24 +22,24 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: pnpm/action-setup@v2
-      with:
-        version: 8
-    - name: Use Node.js 18.x
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18.x
-        cache: 'pnpm'
-    - run: pnpm install
-    - run: pnpm build
-    - run: pnpm test
-    - name: Add 404 page
-      run: cp ./dist/saba/index.html ./dist/saba/404.html
-    - name: Publish
-      if: github.ref == 'refs/heads/main' || github.event.inputs.publish == 'true'
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./web/dist/menu-chia
-        cname: chia.code-source.tk
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'pnpm'
+      - run: pnpm install
+      - run: pnpm build
+      - run: pnpm test:ci
+      - name: Add 404 page
+        run: cp ./dist/menu-chia/index.html ./dist/menu-chia/404.html
+      - name: Publish
+        if: github.ref == 'refs/heads/main' || github.event.inputs.publish == 'true'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./web/dist/menu-chia
+          cname: chia.code-source.tk

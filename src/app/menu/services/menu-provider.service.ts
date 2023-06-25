@@ -12,7 +12,7 @@ export class MenuProviderService {
 
     constructor(private http: HttpClient) {}
 
-    public getMenu(): Observable<Menu> {
+    private getMenu(): Observable<Menu> {
         return this.http
             .get('assets/menu.yaml', { responseType: 'text' })
             .pipe(map((text) => parse(text)));
