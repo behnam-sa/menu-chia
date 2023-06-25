@@ -1,4 +1,5 @@
-# MenuChia
+# MenuChia [![CI/CD status](https://github.com/behnam-sa/menu-chia/actions/workflows/main.yml/badge.svg)](https://github.com/behnam-sa/menu-chia/actions/workflows/main.yml)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
