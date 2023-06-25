@@ -41,5 +41,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./web/dist/menu-chia
+          publish_dir: ./dist/menu-chia
           cname: chia.code-source.tk
