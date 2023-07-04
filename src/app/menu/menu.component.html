@@ -1,10 +1,12 @@
 <main>
     <div class="menu-container" *ngIf="menu$ | async as menu">
-        <h1 class="menu-caption">MENU</h1>
+        <h1 class="menu-caption mat-headline-3">MENU</h1>
 
-        <ng-container *ngFor="let section of menu.sections">
-            <div>
-                <h2>{{ section.caption }}</h2>
+        <div class="menu-sections">
+            <div *ngFor="let section of menu.sections">
+                <h2 class="section-caption">
+                    {{ section.caption }}
+                </h2>
                 <mat-accordion multi>
                     <mat-expansion-panel
                         *ngFor="let item of section.items"
@@ -22,7 +24,6 @@
                     </mat-expansion-panel>
                 </mat-accordion>
             </div>
-            <mat-divider></mat-divider>
-        </ng-container>
+        </div>
     </div>
 </main>

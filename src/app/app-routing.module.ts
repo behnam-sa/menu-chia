@@ -4,8 +4,12 @@ import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
     {
-        path: '',
+        path: 'menu',
         component: MenuComponent,
+    },
+    {
+        path: '**',
+        redirectTo: 'menu',
     },
 ];
 

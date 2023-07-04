@@ -9,12 +9,20 @@ main {
     max-width: 60rem;
 }
 
+.menu-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .menu-caption {
     text-align: center;
-    letter-spacing: 0.2ch;
     font-weight: lighter;
-    font-size: 3em;
-    margin-top: 0;
+    letter-spacing: 0.1ch;
+}
+
+.section-caption {
+    padding: 0 1.5rem;
 }
 
 .price-tag {
