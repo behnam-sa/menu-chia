@@ -1,14 +1,20 @@
-caption: Chia Café
+# yaml-language-server: $schema=../menu-schema.json
 
-items:
-  - name: Dirt
-    price: 220
+sections:
+  - caption: همممم
+    items:
+      - name: Dirt
+        price: 220
 
-  - name: Water
-    price: 1000000000000
+      - name: Water
+        price: 1000000000000
 
-  - name: Air
-    price: -22
+      - name: Air
+        price: -22
 
-  - name: Void
-    price: 0000
+      - name: Void
+
+  - caption: قهوه
+    items:
+      - name: قهوه دمی
+        price: 223
