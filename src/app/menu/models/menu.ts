@@ -1,6 +1,5 @@
-import { MenuItem } from './menu-item';
+import { MenuSection } from './menu-section';
 
 export interface Menu {
-    caption: string;
-    items: MenuItem[];
+    sections: MenuSection[];
 }

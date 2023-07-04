@@ -1,5 +1,8 @@
+import { MenuSubitem } from './menu-subitem';
+
 export interface MenuItem {
     name: string;
-    price: number;
-    subItems?: MenuItem[];
+    price?: number;
+    imageUrl?: string;
+    subitems?: MenuSubitem[];
 }

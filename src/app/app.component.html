@@ -1,1 +1,25 @@
-<router-outlet></router-outlet>
+<header>
+    <mat-toolbar color="primary" class="header">
+        <img alt="Logo" src="/assets/logo.png" class="logo" />
+        <!-- <h1>کافه چیا</h1>
+    <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+    >
+        <mat-icon>menu</mat-icon>
+    </button> -->
+    </mat-toolbar>
+</header>
+
+<router-outlet />
+
+<footer>
+    <mat-toolbar color="primary" class="footer">
+        <div class="contact">
+            <span> کافه چیا </span>
+            &bullet;
+            <app-contact-link platform="instagram" handle="cafe._.chia" />
+        </div>
+    </mat-toolbar>
+</footer>
