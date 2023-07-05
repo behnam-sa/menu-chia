@@ -1,25 +1,28 @@
-<header>
-    <mat-toolbar color="primary" class="header">
-        <img alt="Logo" src="/assets/logo.png" class="logo" />
-        <!-- <h1>کافه چیا</h1>
-    <button
-        mat-icon-button
-        class="example-icon"
-        aria-label="Example icon-button with menu icon"
-    >
-        <mat-icon>menu</mat-icon>
-    </button> -->
-    </mat-toolbar>
-</header>
+<div class="layout">
+    <header>
+        <mat-toolbar color="primary" class="header">
+            <img alt="Cafe Chia" src="/assets/logo.png" class="logo" />
 
-<router-outlet />
+            <h1 class="menu-caption mat-headline-3">MENU</h1>
+        </mat-toolbar>
+    </header>
 
-<footer>
-    <mat-toolbar color="primary" class="footer">
-        <div class="contact">
-            <span> کافه چیا </span>
-            &bullet;
-            <app-contact-link platform="instagram" handle="cafe._.chia" />
-        </div>
-    </mat-toolbar>
-</footer>
+    <mat-drawer-container>
+        <mat-drawer mode="side" opened position="end">
+            <app-navbar />
+        </mat-drawer>
+        <mat-drawer-content>
+            <router-outlet hidden />
+        </mat-drawer-content>
+    </mat-drawer-container>
+
+    <footer>
+        <mat-toolbar color="primary" class="footer">
+            <div class="contact">
+                <span> کافه چیا </span>
+                &bullet;
+                <app-contact-link platform="instagram" handle="cafe._.chia" />
+            </div>
+        </mat-toolbar>
+    </footer>
+</div>

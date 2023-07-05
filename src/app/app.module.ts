@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactLinkComponent } from './contact-link/contact-link.component';
 import { MenuModule } from './menu/menu.module';
+import { NavbarModule } from './navbar/navbar.module';
 
 registerLocaleData(localeFa);
 
@@ -19,6 +20,7 @@ registerLocaleData(localeFa);
         BrowserAnimationsModule,
         MaterialModule,
         MenuModule,
+        NavbarModule,
         ContactLinkComponent,
     ],
     providers: [{ provide: LOCALE_ID, useValue: 'fa-IR' }],

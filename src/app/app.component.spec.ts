@@ -1,15 +1,24 @@
+import { Component } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MaterialModule } from 'src/material/material.module';
 import { AppComponent } from './app.component';
-import { ContactLinkComponent } from './contact-link/contact-link.component';
+
+@Component({ selector: 'app-navbar', template: '', standalone: true })
+class NavbarComponent {}
+
+@Component({ selector: 'app-contact-link', template: '', standalone: true })
+class ContactLinkComponent {}
 
 describe('AppComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [
                 RouterTestingModule,
+                NoopAnimationsModule,
                 MaterialModule,
+                NavbarComponent,
                 ContactLinkComponent,
             ],
             declarations: [AppComponent],
