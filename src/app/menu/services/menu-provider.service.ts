@@ -7,7 +7,7 @@ import { Menu } from '../models/menu';
 @Injectable({
     providedIn: 'root',
 })
-export class MenuProviderService {
+export class MenuProvider {
     public menu$ = defer(() => this.getMenu()).pipe(shareReplay(1));
 
     constructor(private http: HttpClient) {}

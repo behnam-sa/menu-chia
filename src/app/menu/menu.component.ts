@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuProviderService } from './services/menu-provider.service';
+import { MenuProvider } from './services/menu-provider.service';
 
 @Component({
     selector: 'app-menu',
@@ -9,5 +9,5 @@ import { MenuProviderService } from './services/menu-provider.service';
 export class MenuComponent {
     public menu$ = this.menuProvider.menu$;
 
-    constructor(public menuProvider: MenuProviderService) {}
+    constructor(public menuProvider: MenuProvider) {}
 }

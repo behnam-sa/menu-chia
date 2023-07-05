@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuProviderService } from '../menu/services/menu-provider.service';
+import { MenuProvider } from '../menu/services/menu-provider.service';
 
 @Component({
     selector: 'app-navbar',
@@ -9,5 +9,5 @@ import { MenuProviderService } from '../menu/services/menu-provider.service';
 export class NavbarComponent {
     public menu$ = this.menuProvider.menu$;
 
-    constructor(public menuProvider: MenuProviderService) {}
+    constructor(public menuProvider: MenuProvider) {}
 }
