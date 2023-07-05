@@ -1,10 +1,8 @@
 <main>
     <div class="menu-container" *ngIf="menu$ | async as menu">
-        <h1 class="menu-caption mat-headline-3">MENU</h1>
-
         <div class="menu-sections">
             <div *ngFor="let section of menu.sections">
-                <h2 class="section-caption">
+                <h2 class="section-caption" [id]="section.caption">
                     {{ section.caption }}
                 </h2>
                 <mat-accordion multi>
@@ -13,7 +11,9 @@
                         [hideToggle]="item.price !== undefined"
                     >
                         <mat-expansion-panel-header>
-                            <mat-panel-title> {{ item.name }} </mat-panel-title>
+                            <mat-panel-title>
+                                {{ item.name }}
+                            </mat-panel-title>
                             <mat-panel-description
                                 *ngIf="item.price !== undefined"
                                 class="price-tag"

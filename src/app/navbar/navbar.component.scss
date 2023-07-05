@@ -1,0 +1,31 @@
+$scrollbar-thumb-color: rgba(0, 0, 0, 0.2);
+
+.nav {
+    width: 8rem;
+    height: 100vh;
+    overflow-y: auto;
+    position: sticky;
+    top: 0;
+
+    scrollbar-width: thin;
+    scrollbar-color: $scrollbar-thumb-color transparent;
+
+    &::-webkit-scrollbar {
+        height: 8px;
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $scrollbar-thumb-color;
+    }
+}
+
+.nav-item {
+    width: 100%;
+    aspect-ratio: 1;
+
+    a {
+        width: 100%;
+        height: 100%;
+    }
+}

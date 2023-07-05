@@ -1,19 +1,20 @@
 <div class="layout">
     <header>
         <mat-toolbar color="primary" class="header">
-            <img alt="Logo" src="/assets/logo.png" class="logo" />
-            <!-- <h1>کافه چیا</h1>
-        <button
-            mat-icon-button
-            class="example-icon"
-            aria-label="Example icon-button with menu icon"
-        >
-            <mat-icon>menu</mat-icon>
-        </button> -->
+            <img alt="Cafe Chia" src="/assets/logo.png" class="logo" />
+
+            <h1 class="menu-caption mat-headline-3">MENU</h1>
         </mat-toolbar>
     </header>
 
-    <router-outlet hidden />
+    <mat-drawer-container>
+        <mat-drawer mode="side" opened position="end">
+            <app-navbar />
+        </mat-drawer>
+        <mat-drawer-content>
+            <router-outlet hidden />
+        </mat-drawer-content>
+    </mat-drawer-container>
 
     <footer>
         <mat-toolbar color="primary" class="footer">
