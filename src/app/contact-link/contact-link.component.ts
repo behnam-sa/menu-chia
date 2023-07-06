@@ -1,7 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
 import { MaterialModule } from 'src/material/material.module';
 import { SocialPlatform } from './models/social-platform';
 
@@ -19,17 +17,7 @@ export class ContactLinkComponent {
     @Input({ required: true })
     platform!: SocialPlatform;
 
-    constructor(
-        private matIconRegistry: MatIconRegistry,
-        domSanitizer: DomSanitizer
-    ) {
-        this.matIconRegistry.addSvgIcon(
-            'instagram',
-            domSanitizer.bypassSecurityTrustResourceUrl(
-                '/assets/social/instagram logo.svg'
-            )
-        );
-    }
+    constructor() {}
 
     public get link(): string {
         switch (this.platform) {

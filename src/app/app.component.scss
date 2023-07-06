@@ -1,19 +1,30 @@
+$logo-full-height: 15rem;
+$logo-small-height: 6rem;
+
 .layout {
+    --header-height: #{$logo-small-height};
+
     display: grid;
     grid-template-rows: auto minmax(auto, 1fr) auto;
     min-height: 100%;
 }
 
 .header {
-    padding-bottom: 1rem;
+    position: sticky;
+    z-index: 2;
+    top: $logo-small-height - $logo-full-height;
+    height: $logo-full-height;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: auto;
-    gap: 1rem;
+    justify-content: flex-end;
 
     .logo {
-        width: 15rem;
+        transition: height 0.1s;
+        height: max(
+            #{$logo-full-height} - var(--scroll-position) * 1px,
+            #{$logo-small-height}
+        );
         aspect-ratio: 1/1;
     }
 }

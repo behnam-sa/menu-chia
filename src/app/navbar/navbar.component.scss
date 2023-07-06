@@ -1,11 +1,16 @@
 $scrollbar-thumb-color: rgba(0, 0, 0, 0.2);
 
 .nav {
-    width: 8rem;
-    max-height: 100vh;
+    direction: ltr;
+    max-height: min(100%, 100vh - var(--header-height));
     overflow-y: auto;
     position: sticky;
-    top: 0;
+    top: var(--header-height);
+
+    width: 10rem;
+    @media (max-width: 599.98px) {
+        width: 7rem;
+    }
 
     animation: fadeOut 200ms ease-in-out forwards;
     &:hover {
@@ -20,7 +25,6 @@ $scrollbar-thumb-color: rgba(0, 0, 0, 0.2);
     }
     &::-webkit-scrollbar-thumb {
         background-color: var(--scrollbar-thumb-color);
-        padding: 2px solid transparent;
     }
 }
 
@@ -55,6 +59,7 @@ $scrollbar-thumb-color: rgba(0, 0, 0, 0.2);
 }
 
 .nav-item {
+    direction: rtl;
     width: 100%;
     aspect-ratio: 1;
 
@@ -71,7 +76,8 @@ $scrollbar-thumb-color: rgba(0, 0, 0, 0.2);
     gap: 0.5rem;
 
     .icon {
-        width: 4rem;
-        height: 4rem;
+        width: 70%;
+        height: 70%;
+        aspect-ratio: 1/1;
     }
 }
