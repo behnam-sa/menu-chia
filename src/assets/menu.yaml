@@ -1,20 +1,199 @@
 # yaml-language-server: $schema=../menu-schema.json
 
 sections:
-  - caption: همممم
+  - caption: قهوه گرم
+    iconPath: coffee.svg
     items:
-      - name: Dirt
-        price: 220
+      - name: اسپرسو
+        price: 34
 
-      - name: Water
-        price: 1000000000000
+      - name: آمریکانو
+        price: 34
 
-      - name: Air
-        price: -22
+      - name: کاپوچینو
+        price: 48
 
-      - name: Void
+      - name: کوکوچینو
+        price: 64
 
-  - caption: قهوه
+      - name: لاته
+        price: 52
+
+      - name: لاته طعم‌دار
+        price: 61
+        description: وانیل، فندق، دارچین، کارامل
+
+      - name: هانی لاته
+        price: 68
+
+      - name: موکا
+        price: 62
+
+  - caption: دسر
+    iconPath: dessert.svg
     items:
-      - name: قهوه دمی
-        price: 223
+      - name: کیک روز
+        price: 40
+
+      - name: وافل
+        price: 130
+
+      - name: پنکیک
+        price: 110
+
+      - name: بستنی
+        price: 55
+
+      - name: کیک بستنی
+        price: 95
+
+      - name: کوکی
+        price: 16
+
+  - caption: قهوه سرد
+    iconPath: ice coffee.svg
+    items:
+      - name: آیس آمریکانو
+        price: 34
+
+      - name: آیس لاته
+        price: 52
+
+      - name: آیس لاته طعم‌دار
+        price: 61
+        description: وانیل، فندق، دارچین، کارامل
+
+      - name: آیس هانی لاته
+        price: 68
+
+      - name: آیس موکا
+        price: 62
+
+      - name: اورنج اسپرسو
+        price: 64
+
+      - name: آفوگاتو
+        price: 60
+
+  - caption: قهوه دمی
+    iconPath: brewed coffee.svg
+    items:
+      - name: V60
+        price: 67
+
+      - name: کمکس
+        price: 65
+
+      - name: سایفون
+        price: 68
+
+      - name: فرانسه
+        price: 52
+
+      - name: ترک
+        price: 38
+
+      - name: یونانی
+        price: 42
+
+  - caption: نوشیدنی گرم
+    iconPath: hot drink.svg
+    items:
+      - name: هات چاکلت
+        price: 38
+
+      - name: وایت چاکلت
+        price: 36
+
+      - name: چای ماسالا
+        price: 38
+
+      - name: چای ماچا
+        price: 52
+
+      - name: شیر عسل
+        price: 42
+
+  - caption: چای و دمنوش
+    iconPath: tea.svg
+    items:
+      - name: چای سیاه
+        price: 33
+
+      - name: چای زعفران
+        price: 40
+
+      - name: چای سبز
+        price: 36
+
+      - name: چای ترش
+        price: 36
+
+      - name: دمنوش آرامش
+        price: 52
+
+      - name: دمنوش سیب دارچین
+        price: 46
+
+      - name: دمنوش کویین بری
+        price: 50
+
+      - name: دمنوش ویکتوریا سان‌ست
+        price: 48
+
+      - name: دمنوش انتخابی
+        price: 38
+
+  - caption: ماکتل
+    iconPath: mocktail.svg
+    items:
+      - name: هانی ویولت
+        price: 64
+
+      - name: لیموناد
+        price: 44
+
+      - name: موهیتو
+        price: 44
+
+      - name: سان‌رایز
+        price: 60
+
+      - name: گلکسی
+        price: 62
+
+  - caption: اسموتی
+    iconPath: smoothie.svg
+    items:
+      - name: آیس بری
+        price: 76
+
+      - name: بنانا بری
+        price: 82
+
+      - name: پینا کولادا
+        price: 78
+
+  - caption: شیک
+    iconPath: milkshake.svg
+    items:
+      - name: شیک شکلات
+        price: 82
+
+      - name: شیک کوکی
+        price: 90
+
+      - name: شیک کره بادام زمینی
+        price: 95
+
+      - name: شیک نوتلا
+        price: 98
+
+      - name: شیک اسنیکرز
+        price: 120
+
+      - name: شیک اورئو
+        price: 110
+
+      - name: شیک کیت‌کت
+        price: 92

@@ -14,8 +14,8 @@ const routes: Routes = [
 ];
 
 const routerOptions: ExtraOptions = {
-    scrollPositionRestoration: 'enabled',
-    anchorScrolling: 'enabled',
+    scrollPositionRestoration: 'disabled',
+    anchorScrolling: 'disabled',
     scrollOffset: [0, 64],
 };
 

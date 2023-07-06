@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { MaterialModule } from 'src/material/material.module';
 import { NavbarComponent } from './navbar.component';
 
@@ -11,7 +12,11 @@ describe('NavbarComponent', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             declarations: [NavbarComponent],
-            imports: [MaterialModule, HttpClientTestingModule],
+            imports: [
+                MaterialModule,
+                HttpClientTestingModule,
+                RouterTestingModule,
+            ],
         });
         fixture = TestBed.createComponent(NavbarComponent);
         component = fixture.componentInstance;

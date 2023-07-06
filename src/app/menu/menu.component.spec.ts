@@ -11,10 +11,7 @@ describe('MenuComponent', () => {
     let provider: jasmine.SpyObj<MenuProvider>;
 
     beforeEach(() => {
-        provider = jasmine.createSpyObj<MenuProvider>(
-            {},
-            { menu$: of() }
-        );
+        provider = jasmine.createSpyObj<MenuProvider>({}, { menu$: of() });
     });
 
     beforeEach(() => {
