@@ -3,7 +3,10 @@
     "definitions": {
         "MenuItem": {
             "properties": {
-                "imageUrl": {
+                "description": {
+                    "type": "string"
+                },
+                "imagePath": {
                     "type": "string"
                 },
                 "name": {
@@ -24,6 +27,9 @@
         "MenuSection": {
             "properties": {
                 "caption": {
+                    "type": "string"
+                },
+                "iconPath": {
                     "type": "string"
                 },
                 "items": {

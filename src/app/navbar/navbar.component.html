@@ -1,8 +1,20 @@
-<div class="nav">
+<div #nav class="nav">
     <ng-container *ngIf="menu$ | async as menu">
         <div *ngFor="let section of menu.sections" class="nav-item">
-            <a mat-button [routerLink]="[]" [fragment]="section.caption">
-                {{ section.caption }}
+            <a
+                #navItem
+                mat-button
+                appNavItem
+                [sectionName]="section.caption"
+                [class.mat-accent]="
+                    (currentSection$ | async) === section.caption
+                "
+                (click)="scrollToSection(section)"
+            >
+                <div class="button-content">
+                    <mat-icon [svgIcon]="section.iconPath" class="icon" />
+                    <span class="caption">{{ section.caption }}</span>
+                </div>
             </a>
         </div>
     </ng-container>
