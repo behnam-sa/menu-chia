@@ -12,7 +12,10 @@
                 (click)="scrollToSection(section)"
             >
                 <div class="button-content">
-                    <mat-icon [svgIcon]="section.iconPath" class="icon" />
+                    <mat-icon
+                        [svgIcon]="'category:' + section.iconPath"
+                        class="icon"
+                    />
                     <span class="caption">{{ section.caption }}</span>
                 </div>
             </a>

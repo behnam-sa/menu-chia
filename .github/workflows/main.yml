@@ -32,10 +32,15 @@ jobs:
           node-version: 18.x
           cache: 'pnpm'
       - run: pnpm install
+
+      - if: github.ref == 'refs/heads/main' || github.event.inputs.publish == 'true'
+        run: pnpm compress-images
+
       - run: pnpm build
       - run: pnpm test:ci
       - name: Add 404 page
         run: cp ./dist/menu-chia/index.html ./dist/menu-chia/404.html
+
       - name: Publish
         if: github.ref == 'refs/heads/main' || github.event.inputs.publish == 'true'
         uses: peaceiris/actions-gh-pages@v3

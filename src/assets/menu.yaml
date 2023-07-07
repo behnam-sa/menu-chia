@@ -2,10 +2,11 @@
 
 sections:
   - caption: قهوه گرم
-    iconPath: coffee.svg
+    iconPath: coffee
     items:
       - name: اسپرسو
         price: 34
+        imagePath: espresso
 
       - name: آمریکانو
         price: 34
@@ -18,19 +19,22 @@ sections:
 
       - name: لاته
         price: 52
+        imagePath: latte
 
       - name: لاته طعم‌دار
         price: 61
         description: وانیل، فندق، دارچین، کارامل
+        imagePath: latte
 
       - name: هانی لاته
         price: 68
 
       - name: موکا
         price: 62
+        imagePath: mocha
 
   - caption: دسر
-    iconPath: dessert.svg
+    iconPath: dessert
     items:
       - name: کیک روز
         price: 40
@@ -51,32 +55,38 @@ sections:
         price: 16
 
   - caption: قهوه سرد
-    iconPath: ice coffee.svg
+    iconPath: ice coffee
     items:
       - name: آیس آمریکانو
         price: 34
+        imagePath: ice americano
 
       - name: آیس لاته
         price: 52
+        imagePath: ice latte
 
       - name: آیس لاته طعم‌دار
         price: 61
         description: وانیل، فندق، دارچین، کارامل
+        imagePath: ice latte
 
       - name: آیس هانی لاته
         price: 68
+        imagePath: ice honey latte
 
       - name: آیس موکا
         price: 62
+        imagePath: ice mocha
 
       - name: اورنج اسپرسو
         price: 64
+        imagePath: orange espresso
 
       - name: آفوگاتو
         price: 60
 
   - caption: قهوه دمی
-    iconPath: brewed coffee.svg
+    iconPath: brewed coffee
     items:
       - name: V60
         price: 67
@@ -97,31 +107,36 @@ sections:
         price: 42
 
   - caption: نوشیدنی گرم
-    iconPath: hot drink.svg
+    iconPath: hot drink
     items:
       - name: هات چاکلت
         price: 38
+        imagePath: hot chocolate
 
       - name: وایت چاکلت
         price: 36
+        imagePath: white chocolate
 
       - name: چای ماسالا
         price: 38
+        imagePath: masala chai
 
       - name: چای ماچا
         price: 52
+        imagePath: matcha chai
 
       - name: شیر عسل
         price: 42
 
   - caption: چای و دمنوش
-    iconPath: tea.svg
+    iconPath: tea
     items:
       - name: چای سیاه
         price: 33
 
       - name: چای زعفران
         price: 40
+        imagePath: saffron tea
 
       - name: چای سبز
         price: 36
@@ -131,69 +146,87 @@ sections:
 
       - name: دمنوش آرامش
         price: 52
+        imagePath: herbal tea
 
       - name: دمنوش سیب دارچین
         price: 46
+        imagePath: apple cinnamon
 
       - name: دمنوش کویین بری
         price: 50
+        imagePath: queen berry
 
       - name: دمنوش ویکتوریا سان‌ست
         price: 48
+        imagePath: victoria sunset
 
       - name: دمنوش انتخابی
         price: 38
 
   - caption: ماکتل
-    iconPath: mocktail.svg
+    iconPath: mocktail
     items:
       - name: هانی ویولت
         price: 64
+        imagePath: honey violet
 
       - name: لیموناد
         price: 44
+        imagePath: lemonade
 
       - name: موهیتو
         price: 44
+        imagePath: mojito
 
       - name: سان‌رایز
         price: 60
+        imagePath: sunrise
 
       - name: گلکسی
         price: 62
+        imagePath: galaxy
 
   - caption: اسموتی
-    iconPath: smoothie.svg
+    iconPath: smoothie
     items:
       - name: آیس بری
         price: 76
+        imagePath: ice berry
 
       - name: بنانا بری
         price: 82
+        imagePath: banana berry
 
       - name: پینا کولادا
         price: 78
 
   - caption: شیک
-    iconPath: milkshake.svg
+    iconPath: milkshake
     items:
       - name: شیک شکلات
         price: 82
+        imagePath: chocolate shake
 
       - name: شیک کوکی
         price: 90
+        imagePath: cookie shake
 
       - name: شیک کره بادام زمینی
         price: 95
+        imagePath: peanut shake
 
       - name: شیک نوتلا
         price: 98
+        imagePath: nutella shake
 
       - name: شیک اسنیکرز
         price: 120
+        imagePath: sneakers shake
 
       - name: شیک اورئو
         price: 110
+        imagePath: oreo shake
 
       - name: شیک کیت‌کت
         price: 92
+        imagePath: kitkat shake

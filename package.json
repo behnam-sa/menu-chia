@@ -8,6 +8,7 @@
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "test:ci": "ng test --no-watch --browsers=ChromeHeadless",
+        "compress-images": "gulp compress",
         "format": "pnpm prettier -w .",
         "generate-schema": "pnpm typescript-json-schema \"src/app/menu/models/*.ts\" Menu -o src/menu-schema.json"
     },
@@ -36,6 +37,8 @@
         "@angular/localize": "16.1.2",
         "@types/jasmine": "~4.3.4",
         "@types/node": "^20.3.1",
+        "gulp": "^4.0.2",
+        "gulp-sharp-responsive": "^0.4.1",
         "jasmine-core": "~5.0.1",
         "karma": "~6.4.2",
         "karma-chrome-launcher": "~3.2.0",

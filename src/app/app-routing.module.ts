@@ -8,7 +8,8 @@ const routes: Routes = [
         component: MenuComponent,
     },
     {
-        path: '**',
+        path: '',
+        pathMatch: 'full',
         redirectTo: 'menu',
     },
 ];
@@ -16,7 +17,7 @@ const routes: Routes = [
 const routerOptions: ExtraOptions = {
     scrollPositionRestoration: 'disabled',
     anchorScrolling: 'disabled',
-    scrollOffset: [0, 64],
+    scrollOffset: [0, 100],
 };
 
 @NgModule({
