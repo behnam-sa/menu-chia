@@ -33,7 +33,7 @@ const compress = () =>
                 ],
             })
         )
-        .pipe(dest('src/assets/menu/compressed'));
+        .pipe(dest('src/assets/menu/compressed/'));
 
 module.exports = {
     compress,
