@@ -7,19 +7,18 @@ on:
     branches: ['main']
   workflow_dispatch:
     inputs:
-      publish:
+      deploy:
         type: boolean
         required: true
         default: false
-        description: Publish
+        description: Deploy
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
 
     steps:
       - uses: actions/checkout@v3
@@ -33,18 +32,35 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
 
-      - if: github.ref == 'refs/heads/main' || github.event.inputs.publish == 'true'
-        run: pnpm compress-images
+      - run: pnpm compress-images
+        if: github.ref == 'refs/heads/main' || github.event.inputs.deploy == 'true'
 
       - run: pnpm build
       - run: pnpm test:ci
       - name: Add 404 page
         run: cp ./dist/menu-chia/index.html ./dist/menu-chia/404.html
 
-      - name: Publish
-        if: github.ref == 'refs/heads/main' || github.event.inputs.publish == 'true'
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        if: github.ref == 'refs/heads/main' || github.event.inputs.deploy == 'true'
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/menu-chia
-          cname: chia.code-source.tk
+          path: './dist/menu-chia'
+
+  deploy:
+    needs: build
+
+    if: github.ref == 'refs/heads/main' || github.event.inputs.deploy == 'true'
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
