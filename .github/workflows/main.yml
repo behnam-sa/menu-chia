@@ -31,8 +31,8 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
 
-      - if: github.ref == 'refs/heads/main' || github.event.inputs.deploy == 'true'
-        run: pnpm compress-images
+      - run: pnpm compress-images
+        # if: github.ref == 'refs/heads/main' || github.event.inputs.deploy == 'true'
 
       - run: pnpm build
       - run: pnpm test:ci
@@ -40,6 +40,7 @@ jobs:
         run: cp ./dist/menu-chia/index.html ./dist/menu-chia/404.html
 
       - name: Upload artifact
+        # if: github.ref == 'refs/heads/main' || github.event.inputs.deploy == 'true'
         uses: actions/upload-pages-artifact@v1
         with:
           path: './dist/menu-chia'
