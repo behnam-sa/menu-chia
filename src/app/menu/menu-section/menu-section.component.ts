@@ -6,7 +6,6 @@ import {
     OnDestroy,
 } from '@angular/core';
 import { Router } from '@angular/router';
-import { MenuItem } from '../models/menu-item';
 import { MenuSection } from '../models/menu-section';
 
 @Component({
@@ -18,28 +17,28 @@ export class MenuSectionComponent implements AfterViewInit, OnDestroy {
     @Input({ required: true })
     public section!: MenuSection;
 
-    private observer?: IntersectionObserver;
+    private intersectionObserver?: IntersectionObserver;
 
-    constructor(private element: ElementRef, private router: Router) {}
+    private readonly intersectionConfig: IntersectionObserverInit = {
+        rootMargin: '-30% 0px -70% 0px',
+        threshold: 0,
+    };
+
+    constructor(
+        private element: ElementRef,
+        private router: Router
+    ) {}
 
     public ngAfterViewInit(): void {
-        this.observer = new IntersectionObserver(
+        this.intersectionObserver = new IntersectionObserver(
             (entries) => this.observationEvent(entries),
-            {
-                rootMargin: '-30% 0px -70% 0px',
-                threshold: 0,
-            }
+            this.intersectionConfig
         );
-        this.observer.observe(this.element.nativeElement);
+        this.intersectionObserver.observe(this.element.nativeElement);
     }
 
     public ngOnDestroy(): void {
-        this.observer?.disconnect();
-    }
-
-    public getThumbnail(item: MenuItem, width: number, extension: string) {
-        const url = `assets/menu/compressed/${item.imagePath}-${width}.${extension}`;
-        return encodeURI(url);
+        this.intersectionObserver?.disconnect();
     }
 
     private observationEvent(entries: IntersectionObserverEntry[]): void {

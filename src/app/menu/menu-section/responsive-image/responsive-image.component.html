@@ -1,0 +1,52 @@
+<picture>
+    <!-- avif -->
+    <source
+        [srcset]="getThumbnail(256, 'avif')"
+        media="(max-width: 512px)"
+        type="image/avif"
+    />
+    <source
+        [srcset]="getThumbnail(512, 'avif')"
+        media="(max-width: 1024px)"
+        type="image/avif"
+    />
+    <source
+        [srcset]="getThumbnail(1024, 'avif')"
+        media="(max-width: 2048px)"
+        type="image/avif"
+    />
+    <!-- webp -->
+    <source
+        [srcset]="getThumbnail(256, 'webp')"
+        media="(max-width: 512px)"
+        type="image/webp"
+    />
+    <source
+        [srcset]="getThumbnail(512, 'webp')"
+        media="(max-width: 1024px)"
+        type="image/webp"
+    />
+    <source
+        [srcset]="getThumbnail(1024, 'webp')"
+        media="(max-width: 2048px)"
+        type="image/webp"
+    />
+    <!-- jpeg -->
+    <source
+        [srcset]="getThumbnail(256, 'jpg')"
+        media="(max-width: 512px)"
+        type="image/jpeg"
+    />
+    <source
+        [srcset]="getThumbnail(512, 'jpg')"
+        media="(max-width: 1024px)"
+        type="image/jpeg"
+    />
+    <source
+        [srcset]="getThumbnail(1024, 'jpg')"
+        media="(max-width: 2048px)"
+        type="image/jpeg"
+    />
+    <!-- original -->
+    <img [src]="getThumbnail(1024, 'jpg')" />
+</picture>

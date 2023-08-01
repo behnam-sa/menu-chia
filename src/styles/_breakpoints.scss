@@ -1,0 +1,11 @@
+@use '_include-media' as include-media;
+
+include-media.$breakpoints: (
+    // x-small: 0,
+    small: 600px,
+    medium: 960px,
+    large: 1280px,
+    x-large: 1920px
+);
+
+@forward '_include-media' show media;
