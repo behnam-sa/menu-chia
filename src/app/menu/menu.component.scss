@@ -1,12 +1,21 @@
+@use '_breakpoints' as *;
+
 main {
-    padding: 2rem;
     display: flex;
     justify-content: center;
+
+    padding: 2rem;
+    @include media('<small') {
+        padding: 1.5rem 1rem;
+    }
 }
 
 .menu-container {
     flex-grow: 1;
     max-width: 60rem;
+    @include media('<small') {
+        max-width: 20rem;
+    }
 }
 
 .menu-sections {

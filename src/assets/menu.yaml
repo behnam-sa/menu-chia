@@ -5,85 +5,149 @@ sections:
     iconPath: coffee
     items:
       - name: اسپرسو
-        price: 34
         imagePath: espresso
+        subitems:
+          - name: عربیکا
+            price: 34
+          - name: ۵۰/۵۰
+            price: 30
+          - name: ۳۰/۷۰
+            price: 25
 
       - name: آمریکانو
-        price: 34
+        subitems:
+          - name: عربیکا
+            price: 34
+          - name: ۵۰/۵۰
+            price: 30
+          - name: ۳۰/۷۰
+            price: 25
 
       - name: کاپوچینو
-        price: 48
-
-      - name: کوکوچینو
-        price: 64
+        subitems:
+          - name: عربیکا
+            price: 48
+          - name: ۵۰/۵۰
+            price: 44
+          - name: ۳۰/۷۰
+            price: 42
 
       - name: لاته
-        price: 52
         imagePath: latte
+        subitems:
+          - name: عربیکا
+            price: 52
+          - name: ۵۰/۵۰
+            price: 48
+          - name: ۳۰/۷۰
+            price: 42
 
       - name: لاته طعم‌دار
-        price: 61
         description: وانیل، فندق، دارچین، کارامل
         imagePath: latte
+        subitems:
+          - name: عربیکا
+            price: 61
+          - name: ۵۰/۵۰
+            price: 57
+          - name: ۳۰/۷۰
+            price: 51
 
       - name: هانی لاته
-        price: 68
+        subitems:
+          - name: عربیکا
+            price: 68
+          - name: ۵۰/۵۰
+            price: 64
+          - name: ۳۰/۷۰
+            price: 58
+
+      - name: چیا لاته
+        subitems:
+          - name: عربیکا
+            price: 68
+          - name: ۵۰/۵۰
+            price: 64
+          - name: ۳۰/۷۰
+            price: 58
 
       - name: موکا
-        price: 62
         imagePath: mocha
-
-  - caption: دسر
-    iconPath: dessert
-    items:
-      - name: کیک روز
-        price: 40
-
-      - name: وافل
-        price: 130
-
-      - name: پنکیک
-        price: 110
-
-      - name: بستنی
-        price: 55
-
-      - name: کیک بستنی
-        price: 95
-
-      - name: کوکی
-        price: 16
+        subitems:
+          - name: عربیکا
+            price: 62
+          - name: ۵۰/۵۰
+            price: 58
+          - name: ۳۰/۷۰
+            price: 52
 
   - caption: قهوه سرد
     iconPath: ice coffee
     items:
       - name: آیس آمریکانو
-        price: 34
         imagePath: ice americano
+        subitems:
+          - name: عربیکا
+            price: 34
+          - name: ۵۰/۵۰
+            price: 30
+          - name: ۳۰/۷۰
+            price: 25
 
       - name: آیس لاته
-        price: 52
         imagePath: ice latte
+        subitems:
+          - name: عربیکا
+            price: 52
+          - name: ۵۰/۵۰
+            price: 48
+          - name: ۳۰/۷۰
+            price: 42
 
       - name: آیس لاته طعم‌دار
-        price: 61
         description: وانیل، فندق، دارچین، کارامل
         imagePath: ice latte
+        subitems:
+          - name: عربیکا
+            price: 61
+          - name: ۵۰/۵۰
+            price: 57
+          - name: ۳۰/۷۰
+            price: 51
 
       - name: آیس هانی لاته
-        price: 68
         imagePath: ice honey latte
+        subitems:
+          - name: عربیکا
+            price: 68
+          - name: ۵۰/۵۰
+            price: 64
+          - name: ۳۰/۷۰
+            price: 58
 
       - name: آیس موکا
-        price: 62
         imagePath: ice mocha
+        subitems:
+          - name: عربیکا
+            price: 62
+          - name: ۵۰/۵۰
+            price: 58
+          - name: ۳۰/۷۰
+            price: 52
 
       - name: اورنج اسپرسو
         price: 64
         imagePath: orange espresso
 
+      - name: هایپ اسپرسو
+        price: 65
+        imagePath: orange espresso
+
+      - name: فراپاچینو
+        price: 56
+
       - name: آفوگاتو
-        price: 60
+        price: 52
 
   - caption: قهوه دمی
     iconPath: brewed coffee
@@ -106,6 +170,27 @@ sections:
       - name: یونانی
         price: 42
 
+  - caption: دسر
+    iconPath: dessert
+    items:
+      - name: کیک
+        price: 40
+
+      - name: وافل
+        price: 130
+
+      - name: پنکیک
+        price: 110
+
+      - name: بستنی
+        price: 50
+
+      - name: کیک بستنی
+        price: 70
+
+      - name: کوکی
+        price: 18
+
   - caption: نوشیدنی گرم
     iconPath: hot drink
     items:
@@ -121,6 +206,9 @@ sections:
         price: 38
         imagePath: masala chai
 
+      - name: چای کرک
+        price: 40
+
       - name: چای ماچا
         price: 52
         imagePath: matcha chai
@@ -128,11 +216,15 @@ sections:
       - name: شیر عسل
         price: 42
 
+      - name: شیر نسکافه
+        price: 48
+
   - caption: چای و دمنوش
     iconPath: tea
     items:
       - name: چای سیاه
         price: 33
+        imagePath: tea
 
       - name: چای زعفران
         price: 40
@@ -144,24 +236,21 @@ sections:
       - name: چای ترش
         price: 36
 
-      - name: دمنوش آرامش
-        price: 52
-        imagePath: herbal tea
+      - name: دمنوش کویین بری
+        price: 50
+        imagePath: queen berry
+
+      - name: دمنوش ویکتوریا
+        price: 48
+        imagePath: victoria
 
       - name: دمنوش سیب دارچین
         price: 46
         imagePath: apple cinnamon
 
-      - name: دمنوش کویین بری
-        price: 50
-        imagePath: queen berry
-
-      - name: دمنوش ویکتوریا سان‌ست
-        price: 48
-        imagePath: victoria sunset
-
-      - name: دمنوش انتخابی
-        price: 38
+      - name: دمنوش پرتقال نعنا
+        price: 44
+        imagePath: herbal tea
 
   - caption: ماکتل
     iconPath: mocktail
@@ -171,20 +260,32 @@ sections:
         imagePath: honey violet
 
       - name: لیموناد
-        price: 44
+        price: 46
         imagePath: lemonade
 
       - name: موهیتو
-        price: 44
+        price: 46
         imagePath: mojito
+
+      - name: ردموهیتو
+        price: 52
 
       - name: سان‌رایز
         price: 60
         imagePath: sunrise
 
+      - name: کافی لیموناد
+        price: 63
+
       - name: گلکسی
         price: 62
         imagePath: galaxy
+
+      - name: هاوایی
+        price: 56
+
+      - name: گرین گاردن
+        price: 58
 
   - caption: اسموتی
     iconPath: smoothie
@@ -197,36 +298,54 @@ sections:
         price: 82
         imagePath: banana berry
 
-      - name: پینا کولادا
+      - name: هلو
+        price: 74
+
+      - name: آلبالو
+        price: 68
+
+      - name: لواشک
+        price: 72
+
+      - name: شکلاتی
+        price: 76
+
+      - name: پیناکولادا
         price: 78
 
   - caption: شیک
     iconPath: milkshake
     items:
-      - name: شیک شکلات
+      - name: وانیل
+        price: 79
+
+      - name: اسپرسو
+        price: 90
+
+      - name: شکلات
         price: 82
         imagePath: chocolate shake
 
-      - name: شیک کوکی
+      - name: کوکی
         price: 90
         imagePath: cookie shake
 
-      - name: شیک کره بادام زمینی
+      - name: کره بادام زمینی
         price: 95
         imagePath: peanut shake
 
-      - name: شیک نوتلا
+      - name: نوتلا
         price: 98
         imagePath: nutella shake
 
-      - name: شیک اسنیکرز
+      - name: اسنیکرز
         price: 120
         imagePath: sneakers shake
 
-      - name: شیک اورئو
+      - name: اورئو
         price: 110
         imagePath: oreo shake
 
-      - name: شیک کیت‌کت
+      - name: کیت‌کت
         price: 92
         imagePath: kitkat shake

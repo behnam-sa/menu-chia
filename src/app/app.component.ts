@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, HostListener, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { CustomIconRegistry } from 'src/material/services/custom-icon-registry.service';
 
 @Component({
@@ -19,13 +19,5 @@ export class AppComponent implements OnInit {
 
     public ngOnInit(): void {
         this.customIconRegistry.addResolver();
-    }
-
-    @HostListener('window:scroll', ['$event'])
-    public onWindowScroll() {
-        this.document.documentElement.style.setProperty(
-            '--scroll-position',
-            this.window.scrollY.toString()
-        );
     }
 }

@@ -3,91 +3,73 @@
         {{ section.caption }}
     </h2>
 
-    <div class="menu-items">
-        <mat-card *ngFor="let item of section.items">
+    <div class="items">
+        <mat-card *ngFor="let item of section.items" class="item-card">
             <mat-card-header>
                 <div class="card-header">
-                    <picture
+                    <app-responsive-image
                         *ngIf="item.imagePath; else defaultThumbnail"
+                        [path]="item.imagePath"
                         class="thumbnail"
-                    >
-                        <!-- avif -->
-                        <source
-                            [srcset]="getThumbnail(item, 256, 'avif')"
-                            media="(max-width: 512px)"
-                            type="image/avif"
-                        />
-                        <source
-                            [srcset]="getThumbnail(item, 512, 'avif')"
-                            media="(max-width: 1024px)"
-                            type="image/avif"
-                        />
-                        <source
-                            [srcset]="getThumbnail(item, 1024, 'avif')"
-                            media="(max-width: 2048px)"
-                            type="image/avif"
-                        />
-                        <!-- webp -->
-                        <source
-                            [srcset]="getThumbnail(item, 256, 'webp')"
-                            media="(max-width: 512px)"
-                            type="image/webp"
-                        />
-                        <source
-                            [srcset]="getThumbnail(item, 512, 'webp')"
-                            media="(max-width: 1024px)"
-                            type="image/webp"
-                        />
-                        <source
-                            [srcset]="getThumbnail(item, 1024, 'webp')"
-                            media="(max-width: 2048px)"
-                            type="image/webp"
-                        />
-                        <!-- jpeg -->
-                        <source
-                            [srcset]="getThumbnail(item, 256, 'jpg')"
-                            media="(max-width: 512px)"
-                            type="image/jpeg"
-                        />
-                        <source
-                            [srcset]="getThumbnail(item, 512, 'jpg')"
-                            media="(max-width: 1024px)"
-                            type="image/jpeg"
-                        />
-                        <source
-                            [srcset]="getThumbnail(item, 1024, 'jpg')"
-                            media="(max-width: 2048px)"
-                            type="image/jpeg"
-                        />
-                        <!-- original -->
-                        <img [src]="getThumbnail(item, 1024, 'jpg')" />
-                    </picture>
-
+                    />
                     <ng-template #defaultThumbnail>
-                        <mat-icon
-                            [svgIcon]="'category:' + section.iconPath"
-                            class="default-thumbnail"
-                        ></mat-icon>
+                        <div class="default-thumbnail">
+                            <mat-icon
+                                [svgIcon]="'category:' + section.iconPath"
+                                color="accent"
+                            ></mat-icon>
+                        </div>
                     </ng-template>
 
                     <div class="item-details">
-                        <mat-card-title>{{ item.name }}</mat-card-title>
-                        <mat-card-subtitle
-                            *ngIf="item.price !== undefined"
-                            class="description"
-                        >
+                        <mat-card-title class="name">{{
+                            item.name
+                        }}</mat-card-title>
+                        <mat-card-subtitle class="description">
                             {{ item.description }}
                         </mat-card-subtitle>
-                        <mat-card-title
-                            *ngIf="item.price !== undefined"
-                            class="price-tag"
-                        >
+                        <h4 *ngIf="item.price !== undefined" class="price">
                             {{ item.price | localNumber }} تومان
-                        </mat-card-title>
+                        </h4>
+                        <ng-container
+                            *ngTemplateOutlet="
+                                itemSubitems;
+                                context: { $implicit: item }
+                            "
+                        >
+                        </ng-container>
                     </div>
                 </div>
             </mat-card-header>
-            <mat-card-content> </mat-card-content>
+            <mat-card-content class="card-content">
+                <div class="item-details">
+                    <mat-card-title class="name">{{
+                        item.name
+                    }}</mat-card-title>
+                    <h4 *ngIf="item.price !== undefined" class="price">
+                        {{ item.price | localNumber }} تومان
+                    </h4>
+                    <mat-card-subtitle class="description">
+                        {{ item.description }}
+                    </mat-card-subtitle>
+                    <ng-container
+                        *ngTemplateOutlet="
+                            itemSubitems;
+                            context: { $implicit: item }
+                        "
+                    >
+                    </ng-container>
+                </div>
+            </mat-card-content>
         </mat-card>
     </div>
 </section>
+
+<ng-template #itemSubitems let-item>
+    <ul *ngIf="item.subitems" class="subitem-list">
+        <li *ngFor="let subitem of item.subitems" class="subitem">
+            <span>{{ subitem.name }}</span>
+            <span>{{ subitem.price | localNumber }} تومان</span>
+        </li>
+    </ul>
+</ng-template>
