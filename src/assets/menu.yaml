@@ -141,7 +141,6 @@ sections:
 
       - name: هایپ اسپرسو
         price: 65
-        imagePath: orange espresso
 
       - name: فراپاچینو
         price: 56
