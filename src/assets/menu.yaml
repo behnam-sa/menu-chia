@@ -191,7 +191,7 @@ sections:
 
       - name: کوکی
         price: 18
-        iconPath: cookie
+        imagePath: cookie
 
   - caption: نوشیدنی گرم
     iconPath: hot drink
@@ -290,7 +290,7 @@ sections:
 
       - name: گرین گاردن
         price: 58
-        iconPath: green garden
+        imagePath: green garden
  
   - caption: اسموتی
     iconPath: smoothie
