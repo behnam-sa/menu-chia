@@ -190,6 +190,7 @@ sections:
 
       - name: کوکی
         price: 18
+        iconPath: cookie
 
   - caption: نوشیدنی گرم
     iconPath: hot drink
