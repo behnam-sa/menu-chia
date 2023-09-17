@@ -141,6 +141,7 @@ sections:
 
       - name: هایپ اسپرسو
         price: 65
+        imagePath: hype espresso
 
       - name: فراپاچینو
         price: 56
