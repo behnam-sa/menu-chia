@@ -24,6 +24,7 @@ sections:
             price: 25
 
       - name: کاپوچینو
+        imagePath: capo chino
         subitems:
           - name: عربیکا
             price: 48
