@@ -22,7 +22,7 @@ sections:
             price: 30
           - name: ۳۰/۷۰
             price: 25
-
+            
       - name: کاپوچینو
         imagePath: capo chino
         subitems:
@@ -286,6 +286,7 @@ sections:
 
       - name: هاوایی
         price: 56
+        imagePath: havaie
 
       - name: گرین گاردن
         price: 58
@@ -304,9 +305,11 @@ sections:
 
       - name: هلو
         price: 74
-
+        imagePath: pich
+        
       - name: آلبالو
         price: 68
+        imagePath: Sour Cherry
 
       - name: لواشک
         price: 72
