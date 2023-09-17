@@ -276,6 +276,7 @@ sections:
 
       - name: کافی لیموناد
         price: 63
+        imagePath: cofi limonad
 
       - name: گلکسی
         price: 62
