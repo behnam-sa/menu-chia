@@ -24,6 +24,7 @@ sections:
             price: 25
 
       - name: کاپوچینو
+        imagePath: capo chino
         subitems:
           - name: عربیکا
             price: 48
@@ -288,7 +289,7 @@ sections:
 
       - name: گرین گاردن
         price: 58
-         iconPath: green garden
+        iconPath: green garden
  
   - caption: اسموتی
     iconPath: smoothie
