@@ -176,6 +176,7 @@ sections:
     items:
       - name: کیک
         price: 40
+        imagePath: cack
 
       - name: وافل
         price: 130
