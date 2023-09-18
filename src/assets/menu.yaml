@@ -55,6 +55,7 @@ sections:
             price: 51
 
       - name: هانی لاته
+        imagePath: hony late
         subitems:
           - name: عربیکا
             price: 68
@@ -64,6 +65,7 @@ sections:
             price: 58
 
       - name: چیا لاته
+        imagePath: chia late
         subitems:
           - name: عربیکا
             price: 68
