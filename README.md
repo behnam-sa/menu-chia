@@ -1,6 +1,6 @@
 # MenuChia [![CI/CD status](https://github.com/behnam-sa/menu-chia/actions/workflows/main.yml/badge.svg)](https://github.com/behnam-sa/menu-chia/actions/workflows/main.yml)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
+This GitHub repository houses the Angular-based source code for the Cafe Chia website, providing a clean and intuitive interface for users to explore the menu. With a focus on simplicity, the project aims to enhance the user experience through efficient navigation and a visually appealing design. Explore the cafe's offerings by visiting the [live site hosted on GitHub Pages](https://cafechia.ir/). Contributions and feedback are welcome to further improve this open-source project.
 
 ## Development server
 
@@ -17,11 +17,3 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
