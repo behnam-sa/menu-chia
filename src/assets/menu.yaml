@@ -24,7 +24,7 @@ sections:
             price: 25
 
       - name: کاپوچینو
-        imagePath: capo chino
+        imagePath: cappuccino
         subitems:
           - name: عربیکا
             price: 48
@@ -55,7 +55,7 @@ sections:
             price: 51
 
       - name: هانی لاته
-        imagePath: hony late
+        imagePath: honey latte
         subitems:
           - name: عربیکا
             price: 68
@@ -65,7 +65,7 @@ sections:
             price: 58
 
       - name: چیا لاته
-        imagePath: chia late
+        imagePath: chia latte
         subitems:
           - name: عربیکا
             price: 68
@@ -178,7 +178,7 @@ sections:
     items:
       - name: کیک
         price: 40
-        imagePath: cack
+        imagePath: cake
 
       - name: وافل
         price: 130
@@ -213,6 +213,7 @@ sections:
 
       - name: چای کرک
         price: 40
+        imagePath: karak chai
 
       - name: چای ماچا
         price: 52
@@ -281,7 +282,7 @@ sections:
 
       - name: کافی لیموناد
         price: 63
-        imagePath: cofi limonad
+        imagePath: coffee lemonade
 
       - name: گلکسی
         price: 62
@@ -289,7 +290,7 @@ sections:
 
       - name: هاوایی
         price: 56
-        imagePath: havaie
+        imagePath: hawaii
 
       - name: گرین گاردن
         price: 58
@@ -299,19 +300,19 @@ sections:
     items:
       - name: آیس بری
         price: 76
-        imagePath: ice berry
+        imagePath: ice berry smoothie
 
       - name: بنانا بری
         price: 82
-        imagePath: banana berry
+        imagePath: banana berry smoothie
 
       - name: هلو
         price: 74
-        imagePath: pich
+        imagePath: peach smoothie
 
       - name: آلبالو
         price: 68
-        imagePath: Sour Cherry
+        imagePath: sour cherry smoothie
 
       - name: لواشک
         price: 72
