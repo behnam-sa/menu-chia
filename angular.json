@@ -73,10 +73,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "menu-chia:build:production"
+                            "buildTarget": "menu-chia:build:production"
                         },
                         "development": {
-                            "browserTarget": "menu-chia:build:development"
+                            "buildTarget": "menu-chia:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "menu-chia:build"
+                        "buildTarget": "menu-chia:build"
                     }
                 },
                 "test": {
