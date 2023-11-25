@@ -22,7 +22,7 @@ sections:
             price: 30
           - name: ۳۰/۷۰
             price: 25
-            
+
       - name: کاپوچینو
         imagePath: capo chino
         subitems:
@@ -293,8 +293,7 @@ sections:
 
       - name: گرین گاردن
         price: 58
-        imagePath: green garden
- 
+
   - caption: اسموتی
     iconPath: smoothie
     items:
@@ -309,7 +308,7 @@ sections:
       - name: هلو
         price: 74
         imagePath: pich
-        
+
       - name: آلبالو
         price: 68
         imagePath: Sour Cherry

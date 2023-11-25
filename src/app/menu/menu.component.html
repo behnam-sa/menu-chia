@@ -1,10 +1,11 @@
 <main>
-    <div class="menu-container" *ngIf="menu$ | async as menu">
-        <div class="menu-sections">
-            <app-menu-section
-                *ngFor="let section of menu.sections"
-                [section]="section"
-            />
+    @if (menu$ | async; as menu) {
+        <div class="menu-container">
+            <div class="menu-sections">
+                @for (section of menu.sections; track section) {
+                    <app-menu-section [section]="section" />
+                }
+            </div>
         </div>
-    </div>
+    }
 </main>

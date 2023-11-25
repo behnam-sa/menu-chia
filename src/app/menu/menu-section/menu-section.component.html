@@ -2,35 +2,59 @@
     <h2 class="section-caption" [id]="section.caption">
         {{ section.caption }}
     </h2>
-
     <div class="items">
-        <mat-card *ngFor="let item of section.items" class="item-card">
-            <mat-card-header>
-                <div class="card-header">
-                    <app-responsive-image
-                        *ngIf="item.imagePath; else defaultThumbnail"
-                        [path]="item.imagePath"
-                        class="thumbnail"
-                    />
-                    <ng-template #defaultThumbnail>
-                        <div class="default-thumbnail">
-                            <mat-icon
-                                [svgIcon]="'category:' + section.iconPath"
-                                color="accent"
-                            ></mat-icon>
+        @for (item of section.items; track item) {
+            <mat-card class="item-card">
+                <mat-card-header>
+                    <div class="card-header">
+                        @if (item.imagePath) {
+                            <app-responsive-image
+                                [path]="item.imagePath"
+                                class="thumbnail"
+                            />
+                        } @else {
+                            <div class="default-thumbnail">
+                                <mat-icon
+                                    [svgIcon]="'category:' + section.iconPath"
+                                    color="accent"
+                                ></mat-icon>
+                            </div>
+                        }
+                        <div class="item-details">
+                            <mat-card-title class="name">{{
+                                item.name
+                            }}</mat-card-title>
+                            <mat-card-subtitle class="description">
+                                {{ item.description }}
+                            </mat-card-subtitle>
+                            @if (item.price !== undefined) {
+                                <h4 class="price">
+                                    {{ item.price | localNumber }} تومان
+                                </h4>
+                            }
+                            <ng-container
+                                *ngTemplateOutlet="
+                                    itemSubitems;
+                                    context: { $implicit: item }
+                                "
+                            >
+                            </ng-container>
                         </div>
-                    </ng-template>
-
+                    </div>
+                </mat-card-header>
+                <mat-card-content class="card-content">
                     <div class="item-details">
                         <mat-card-title class="name">{{
                             item.name
                         }}</mat-card-title>
+                        @if (item.price !== undefined) {
+                            <h4 class="price">
+                                {{ item.price | localNumber }} تومان
+                            </h4>
+                        }
                         <mat-card-subtitle class="description">
                             {{ item.description }}
                         </mat-card-subtitle>
-                        <h4 *ngIf="item.price !== undefined" class="price">
-                            {{ item.price | localNumber }} تومان
-                        </h4>
                         <ng-container
                             *ngTemplateOutlet="
                                 itemSubitems;
@@ -39,37 +63,20 @@
                         >
                         </ng-container>
                     </div>
-                </div>
-            </mat-card-header>
-            <mat-card-content class="card-content">
-                <div class="item-details">
-                    <mat-card-title class="name">{{
-                        item.name
-                    }}</mat-card-title>
-                    <h4 *ngIf="item.price !== undefined" class="price">
-                        {{ item.price | localNumber }} تومان
-                    </h4>
-                    <mat-card-subtitle class="description">
-                        {{ item.description }}
-                    </mat-card-subtitle>
-                    <ng-container
-                        *ngTemplateOutlet="
-                            itemSubitems;
-                            context: { $implicit: item }
-                        "
-                    >
-                    </ng-container>
-                </div>
-            </mat-card-content>
-        </mat-card>
+                </mat-card-content>
+            </mat-card>
+        }
     </div>
 </section>
-
 <ng-template #itemSubitems let-item>
-    <ul *ngIf="item.subitems" class="subitem-list">
-        <li *ngFor="let subitem of item.subitems" class="subitem">
-            <span>{{ subitem.name }}</span>
-            <span>{{ subitem.price | localNumber }} تومان</span>
-        </li>
-    </ul>
+    @if (item.subitems) {
+        <ul class="subitem-list">
+            @for (subitem of item.subitems; track subitem) {
+                <li class="subitem">
+                    <span>{{ subitem.name }}</span>
+                    <span>{{ subitem.price | localNumber }} تومان</span>
+                </li>
+            }
+        </ul>
+    }
 </ng-template>
