@@ -1,0 +1,11 @@
+.subitem-list {
+    padding-top: 1rem;
+    display: grid;
+    gap: 0.5rem;
+
+    .subitem {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+}

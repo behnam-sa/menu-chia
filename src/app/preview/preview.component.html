@@ -1,0 +1,16 @@
+<ng-template #imageDialog>
+    @if (item$ | async; as item) {
+        <div class="mat-typography preview-top">
+            <div class="image-close-container">
+                <h2 class="caption">{{ item.name }}</h2>
+                <button mat-icon-button mat-dialog-close>
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </div>
+        <img
+            [src]="'assets/menu/compressed/' + item.imagePath + '-1024.avif'"
+            class="image"
+        />
+    }
+</ng-template>

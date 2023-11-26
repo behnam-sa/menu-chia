@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ResponsiveImageComponent } from './responsive-image.component';
 
 describe('ResponsiveImageComponent', () => {
@@ -8,7 +7,7 @@ describe('ResponsiveImageComponent', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [ResponsiveImageComponent],
+            imports: [ResponsiveImageComponent],
         });
         fixture = TestBed.createComponent(ResponsiveImageComponent);
         component = fixture.componentInstance;

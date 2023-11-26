@@ -1,0 +1,33 @@
+.image {
+    max-height: 100vh;
+    max-width: 100vw;
+    object-fit: contain;
+}
+
+.preview-top {
+    max-height: 0;
+    overflow: visible;
+    position: relative;
+}
+
+.image-close-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+
+    .caption {
+        margin: 0;
+        padding: 0 1rem;
+        text-shadow: 0 0 10px black;
+    }
+
+    button {
+        text-shadow: 0 0 6px black;
+    }
+}
