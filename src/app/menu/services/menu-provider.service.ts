@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, defer, map, shareReplay } from 'rxjs';
+import { Observable, defer, map, retry, shareReplay } from 'rxjs';
 import { parse } from 'yaml';
 import { Menu } from '../models/menu';
 
@@ -8,7 +8,7 @@ import { Menu } from '../models/menu';
     providedIn: 'root',
 })
 export class MenuProvider {
-    public menu$ = defer(() => this.getMenu()).pipe(shareReplay(1));
+    public menu$ = defer(() => this.getMenu()).pipe(retry(3), shareReplay(1));
 
     constructor(private http: HttpClient) {}
 

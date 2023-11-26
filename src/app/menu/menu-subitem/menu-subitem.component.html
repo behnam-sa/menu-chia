@@ -1,0 +1,10 @@
+@if (subitems) {
+    <ul class="subitem-list">
+        @for (subitem of subitems; track subitem) {
+            <li class="subitem">
+                <span>{{ subitem.name }}</span>
+                <span>{{ subitem.price | localNumber }} تومان</span>
+            </li>
+        }
+    </ul>
+}

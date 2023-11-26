@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
+import { PreviewComponent } from './preview/preview.component';
 
 const routes: Routes = [
     {
@@ -11,6 +12,11 @@ const routes: Routes = [
         path: '',
         pathMatch: 'full',
         redirectTo: 'menu',
+    },
+    {
+        path: ':section/:item',
+        outlet: 'preview',
+        component: PreviewComponent,
     },
 ];
 

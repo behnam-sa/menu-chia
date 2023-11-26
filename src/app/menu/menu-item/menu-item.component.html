@@ -1,0 +1,55 @@
+<mat-card class="item-card">
+    <mat-card-header>
+        <div class="card-header">
+            @if (item.imagePath) {
+                <a
+                    [routerLink]="[
+                        '',
+                        {
+                            outlets: {
+                                preview: [section.caption, item.name]
+                            }
+                        }
+                    ]"
+                    [fragment]="section.caption"
+                    class="thumbnail-link"
+                    title="پیش‌نمایش"
+                >
+                    <app-responsive-image
+                        [path]="item.imagePath"
+                        class="thumbnail"
+                    />
+                </a>
+            } @else {
+                <div class="default-thumbnail">
+                    <mat-icon
+                        [svgIcon]="'category:' + section.iconPath"
+                        color="accent"
+                    ></mat-icon>
+                </div>
+            }
+            <div class="item-details">
+                <mat-card-title class="name">{{ item.name }}</mat-card-title>
+                <mat-card-subtitle class="description">
+                    {{ item.description }}
+                </mat-card-subtitle>
+                @if (item.price !== undefined) {
+                    <h4 class="price">{{ item.price | localNumber }} تومان</h4>
+                }
+                <app-menu-subitem [subitems]="item.subitems" />
+            </div>
+        </div>
+    </mat-card-header>
+    <mat-card-content class="card-content">
+        <div class="item-details">
+            <mat-card-title class="name">{{ item.name }}</mat-card-title>
+            @if (item.price !== undefined) {
+                <h4 class="price">{{ item.price | localNumber }} تومان</h4>
+            }
+            <mat-card-subtitle class="description">
+                {{ item.description }}
+            </mat-card-subtitle>
+            <app-menu-subitem [subitems]="item.subitems" />
+        </div>
+    </mat-card-content>
+</mat-card>

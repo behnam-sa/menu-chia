@@ -1,7 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-responsive-image',
+    standalone: true,
+    imports: [CommonModule],
     templateUrl: './responsive-image.component.html',
     styleUrls: ['./responsive-image.component.scss'],
 })
