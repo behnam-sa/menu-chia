@@ -1,26 +1,12 @@
 <div #nav class="nav">
     @if (menu$ | async; as menu) {
         @for (section of menu.sections; track section) {
-            <div class="nav-item">
-                <a
-                    #navItem
-                    mat-button
-                    appNavItem
-                    [sectionName]="section.caption"
-                    [class.mat-accent]="
-                        (currentSection$ | async) === section.caption
-                    "
-                    (click)="scrollToSection(section)"
-                >
-                    <div class="button-content">
-                        <mat-icon
-                            [svgIcon]="'category:' + section.iconPath"
-                            class="icon"
-                        />
-                        <span class="caption">{{ section.caption }}</span>
-                    </div>
-                </a>
-            </div>
+            <app-nav-item
+                #navItem
+                [section]="section"
+                [active]="(currentSection$ | async) === section.caption"
+                (click)="scrollToSection(section)"
+            />
         }
     }
 </div>
