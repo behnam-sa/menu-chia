@@ -1,52 +1,52 @@
 <picture>
     <!-- avif -->
     <source
-        [srcset]="getThumbnail(256, 'avif')"
+        [srcset]="path | compressedMenuImage: 256 : 'avif'"
         media="(max-width: 512px)"
         type="image/avif"
     />
     <source
-        [srcset]="getThumbnail(512, 'avif')"
+        [srcset]="path | compressedMenuImage: 512 : 'avif'"
         media="(max-width: 1024px)"
         type="image/avif"
     />
     <source
-        [srcset]="getThumbnail(1024, 'avif')"
+        [srcset]="path | compressedMenuImage: 1024 : 'avif'"
         media="(max-width: 2048px)"
         type="image/avif"
     />
     <!-- webp -->
     <source
-        [srcset]="getThumbnail(256, 'webp')"
+        [srcset]="path | compressedMenuImage: 256 : 'webp'"
         media="(max-width: 512px)"
         type="image/webp"
     />
     <source
-        [srcset]="getThumbnail(512, 'webp')"
+        [srcset]="path | compressedMenuImage: 512 : 'webp'"
         media="(max-width: 1024px)"
         type="image/webp"
     />
     <source
-        [srcset]="getThumbnail(1024, 'webp')"
+        [srcset]="path | compressedMenuImage: 1024 : 'webp'"
         media="(max-width: 2048px)"
         type="image/webp"
     />
     <!-- jpeg -->
     <source
-        [srcset]="getThumbnail(256, 'jpg')"
+        [srcset]="path | compressedMenuImage: 256 : 'jpg'"
         media="(max-width: 512px)"
         type="image/jpeg"
     />
     <source
-        [srcset]="getThumbnail(512, 'jpg')"
+        [srcset]="path | compressedMenuImage: 512 : 'jpg'"
         media="(max-width: 1024px)"
         type="image/jpeg"
     />
     <source
-        [srcset]="getThumbnail(1024, 'jpg')"
+        [srcset]="path | compressedMenuImage: 1024 : 'jpg'"
         media="(max-width: 2048px)"
         type="image/jpeg"
     />
     <!-- original -->
-    <img [src]="getThumbnail(1024, 'jpg')" />
+    <img [src]="path | compressedMenuImage: 1024 : 'jpg'" />
 </picture>

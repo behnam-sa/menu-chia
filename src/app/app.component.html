@@ -30,4 +30,8 @@
     </footer>
 </div>
 
-<router-outlet name="preview"></router-outlet>
+<router-outlet name="preview" />
+
+@if (isProduction) {
+    <app-analytics />
+}
