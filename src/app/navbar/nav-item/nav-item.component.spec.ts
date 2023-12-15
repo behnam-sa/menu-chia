@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NavItemComponent } from './nav-item.component';
 
 describe('NavItemComponent', () => {
@@ -13,6 +12,13 @@ describe('NavItemComponent', () => {
 
         fixture = TestBed.createComponent(NavItemComponent);
         component = fixture.componentInstance;
+
+        component.section = {
+            caption: '',
+            iconPath: '',
+            items: [],
+        };
+
         fixture.detectChanges();
     });
 

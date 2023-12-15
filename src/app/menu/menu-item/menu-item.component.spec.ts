@@ -1,7 +1,13 @@
+import { Component, Input } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MaterialModule } from 'src/material/material.module';
-import { MenuSubitemsComponent } from '../menu-subitems/menu-subitems.component';
+import { MenuSubitem } from '../models/menu-subitem';
 import { MenuItemComponent } from './menu-item.component';
+
+@Component({ selector: 'app-menu-subitems', standalone: true })
+class MenuSubitemsComponent {
+    @Input() public subitems?: MenuSubitem[];
+}
 
 describe('MenuItemComponent', () => {
     let component: MenuItemComponent;
@@ -9,9 +15,14 @@ describe('MenuItemComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [MenuItemComponent, MenuSubitemsComponent],
-            imports: [MaterialModule],
+            imports: [MenuItemComponent],
         }).compileComponents();
+
+        TestBed.overrideComponent(MenuItemComponent, {
+            set: {
+                imports: [MenuSubitemsComponent, MaterialModule],
+            },
+        });
 
         fixture = TestBed.createComponent(MenuItemComponent);
         component = fixture.componentInstance;
