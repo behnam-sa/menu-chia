@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MaterialModule } from 'src/material/material.module';
-import { MenuSubitemComponent } from '../menu-subitem/menu-subitem.component';
+import { MenuSubitemsComponent } from '../menu-subitems/menu-subitems.component';
 import { MenuItemComponent } from './menu-item.component';
 
 describe('MenuItemComponent', () => {
@@ -9,7 +9,7 @@ describe('MenuItemComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [MenuItemComponent, MenuSubitemComponent],
+            declarations: [MenuItemComponent, MenuSubitemsComponent],
             imports: [MaterialModule],
         }).compileComponents();
 
