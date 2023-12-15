@@ -45,7 +45,10 @@
                         >{{ item.price | localNumber }} تومان</span
                     >
                 }
-                <app-menu-subitems class="subitems" [subitems]="item.subitems" />
+                <app-menu-subitems
+                    class="subitems"
+                    [subitems]="item.subitems"
+                />
             </div>
         </div>
     </mat-card-header>
