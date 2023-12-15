@@ -9,11 +9,12 @@ import { CompressedMenuImagePipe } from '../menu/pipes/compressed-menu-image.pip
     styleUrls: ['./responsive-image.component.scss'],
 })
 export class ResponsiveImageComponent {
+    protected readonly mediaTypes = [
+        { type: 'image/avif', extension: 'avif' },
+        { type: 'image/webp', extension: 'webp' },
+        { type: 'image/jpeg', extension: 'jpg' },
+    ];
+
     @Input({ required: true })
     public path!: string;
-
-    public getThumbnail(width: number, extension: string) {
-        const url = `assets/menu/compressed/${this.path}-${width}.${extension}`;
-        return encodeURI(url);
-    }
 }

@@ -9,7 +9,7 @@ export class CompressedMenuImagePipe implements PipeTransform {
         imagePath: unknown,
         width: number = 1024,
         extension: string = 'avif'
-    ): unknown {
+    ): string {
         const url = `assets/menu/compressed/${imagePath}-${width}.${extension}`;
         return encodeURI(url);
     }
