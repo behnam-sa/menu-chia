@@ -1,89 +1,75 @@
 @use '_breakpoints' as *;
 
-.item-card {
-    @include media('<small') {
-        gap: 1rem;
-    }
-}
-
 .card-header {
     flex-grow: 1;
     display: flex;
     flex-direction: row;
     gap: 1rem;
 
-    .thumbnail {
-        width: 10rem;
-        height: unset;
-        aspect-ratio: 1/1;
-
-        @include media('<small') {
-            width: 100%;
-        }
-    }
-
-    .default-thumbnail {
-        @extend .thumbnail;
-        display: grid;
-
-        mat-icon {
-            padding: 5%;
-            width: unset;
-            height: unset;
-        }
-    }
-
-    .thumbnail-link {
-        display: contents;
-    }
-
-    .item-details {
-        flex-grow: 1;
-        display: flex;
+    @include media('<small') {
         flex-direction: column;
-
-        @include media('<small') {
-            display: none;
-        }
-
-        .description {
-            flex-grow: 1;
-        }
-
-        .price {
-            align-self: flex-end;
-            margin: 0;
-        }
     }
 }
 
-.card-content {
-    .item-details {
-        display: grid;
+.thumbnail {
+    width: 10rem;
+    height: unset;
+    aspect-ratio: 1/1;
+
+    @include media('<small') {
+        width: 100%;
+    }
+}
+
+.default-thumbnail {
+    @extend .thumbnail;
+    display: grid;
+
+    mat-icon {
+        padding: 5%;
+        width: unset;
+        height: unset;
+    }
+}
+
+.thumbnail-link {
+    display: contents;
+}
+
+.item-details {
+    flex-grow: 1;
+    display: grid;
+
+    @include media('>=small') {
+        grid-template-rows: auto auto 1fr auto;
         grid-template-areas:
-            'name price'
-            'desc desc';
+            'name'
+            'desc'
+            '.'
+            'price'
+            'subitems';
+    }
 
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
+    @include media('<small') {
+        grid-template-areas:
+            'name       price'
+            'desc       desc'
+            'subitems   subitems';
+    }
 
-        @include media('>=small') {
-            display: none;
-        }
+    .name {
+        grid-area: name;
+    }
 
-        .name {
-            grid-area: name;
-        }
+    .description {
+        grid-area: desc;
+    }
 
-        .price {
-            grid-area: price;
-            align-self: end;
-            margin: 0;
-        }
+    .price {
+        grid-area: price;
+    }
 
-        .description {
-            grid-area: desc;
-        }
+    .subitems {
+        grid-area: subitems;
     }
 }

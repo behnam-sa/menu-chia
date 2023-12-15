@@ -16,10 +16,15 @@
                     class="thumbnail-link"
                     title="پیش‌نمایش"
                 >
-                    <app-responsive-image
-                        [path]="item.imagePath"
-                        class="thumbnail"
-                    />
+                    @defer (on viewport; on idle; prefetch on immediate) {
+                        <app-responsive-image
+                            [alt]="item.name"
+                            [path]="item.imagePath"
+                            class="thumbnail"
+                        />
+                    } @placeholder {
+                        <div class="thumbnail"></div>
+                    }
                 </a>
             } @else {
                 <div class="default-thumbnail">
@@ -29,28 +34,20 @@
                     ></mat-icon>
                 </div>
             }
+
             <div class="item-details">
                 <mat-card-title class="name">{{ item.name }}</mat-card-title>
                 <mat-card-subtitle class="description">
                     {{ item.description }}
                 </mat-card-subtitle>
                 @if (item.price !== undefined) {
-                    <h4 class="price">{{ item.price | localNumber }} تومان</h4>
+                    <span class="price mat-subtitle-1"
+                        >{{ item.price | localNumber }} تومان</span
+                    >
                 }
-                <app-menu-subitem [subitems]="item.subitems" />
+                <app-menu-subitem class="subitems" [subitems]="item.subitems" />
             </div>
         </div>
     </mat-card-header>
-    <mat-card-content class="card-content">
-        <div class="item-details">
-            <mat-card-title class="name">{{ item.name }}</mat-card-title>
-            @if (item.price !== undefined) {
-                <h4 class="price">{{ item.price | localNumber }} تومان</h4>
-            }
-            <mat-card-subtitle class="description">
-                {{ item.description }}
-            </mat-card-subtitle>
-            <app-menu-subitem [subitems]="item.subitems" />
-        </div>
-    </mat-card-content>
+    <mat-card-content></mat-card-content>
 </mat-card>

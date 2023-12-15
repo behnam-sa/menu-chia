@@ -9,5 +9,9 @@
         }
     }
 
-    <img [src]="path | compressedMenuImage: 1024 : 'jpg'" loading="lazy" />
+    <img
+        [alt]="alt"
+        [src]="path | compressedMenuImage: 1024 : 'jpg'"
+        loading="lazy"
+    />
 </picture>

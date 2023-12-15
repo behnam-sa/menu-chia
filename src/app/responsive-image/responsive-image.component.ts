@@ -17,4 +17,7 @@ export class ResponsiveImageComponent {
 
     @Input({ required: true })
     public path!: string;
+
+    @Input()
+    public alt?: string;
 }
