@@ -3,6 +3,7 @@ import { Inject, LOCALE_ID, Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
     name: 'localNumber',
+    standalone: true,
 })
 export class LocalNumberPipe implements PipeTransform {
     private persian_digits: { [key: string]: string } = {

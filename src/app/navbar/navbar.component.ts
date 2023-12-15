@@ -1,4 +1,4 @@
-import { ViewportScroller } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import {
     Component,
     ElementRef,
@@ -6,15 +6,17 @@ import {
     ViewChild,
     ViewChildren,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Subject, filter, repeat, skip, takeUntil } from 'rxjs';
-import scrollIntoView from 'scroll-into-view-if-needed';
+import { MaterialModule } from 'src/material/material.module';
 import { MenuSection } from '../menu/models/menu-section';
 import { MenuProvider } from '../menu/services/menu-provider.service';
-import { NavItemDirective } from './directives/nav-item.directive';
+import { NavItemComponent } from './nav-item/nav-item.component';
 
 @Component({
     selector: 'app-navbar',
+    standalone: true,
+    imports: [CommonModule, RouterModule, MaterialModule, NavItemComponent],
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss'],
 })
@@ -22,8 +24,8 @@ export class NavbarComponent {
     @ViewChild('nav')
     public nav?: ElementRef<HTMLElement>;
 
-    @ViewChildren('navItem', { read: NavItemDirective })
-    public navItems?: QueryList<NavItemDirective>;
+    @ViewChildren('navItem')
+    public navItems?: QueryList<NavItemComponent>;
 
     public menu$ = this.menuProvider.menu$;
     public currentSection$ = this.route.fragment;
@@ -56,16 +58,9 @@ export class NavbarComponent {
         if (!this.navItems || !this.nav || !sectionName) return;
 
         const navItem = this.navItems.find(
-            (navItem) => navItem.sectionName === sectionName
+            (navItem) => navItem.section.caption === sectionName
         );
 
-        if (navItem?.element.nativeElement) {
-            scrollIntoView(navItem?.element.nativeElement, {
-                scrollMode: 'if-needed',
-                behavior: 'smooth',
-                block: 'nearest',
-                boundary: this.nav.nativeElement,
-            });
-        }
+        navItem?.scrollIntoView(this.nav);
     }
 }

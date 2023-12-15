@@ -1,20 +1,44 @@
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
-// Plus imports for other components in your app.
+@use '@material/typography' as mdc-typography;
+@use 'sass:map';
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+@function typography-config-level($mdc-level, $font-family: null) {
+    $mdc-level-config: map.get(mdc-typography.$styles, $mdc-level);
+
+    @return mat.define-typography-level(
+        $font-family: $font-family,
+        $font-size: map.get($mdc-level-config, font-size),
+        $line-height: map.get($mdc-level-config, line-height),
+        $font-weight: map.get($mdc-level-config, font-weight),
+        $letter-spacing: 0
+    );
+}
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $menu-chia-primary: mat.define-palette(mat.$indigo-palette, 900);
 $menu-chia-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-$menu-chia-typography: mat.define-typography-config(
+$menu-chia-typography: mat.define-rem-typography-config(
     $font-family: 'Vazirmatn, Roboto, "Helvetica Neue", sans-serif',
+    $headline-1: typography-config-level(headline1),
+    $headline-2: typography-config-level(headline2),
+    $headline-3: typography-config-level(headline3),
+    $headline-4: typography-config-level(headline4),
+    $headline-5: typography-config-level(headline5),
+    $headline-6: typography-config-level(headline6),
+    $subtitle-1: typography-config-level(subtitle1),
+    $subtitle-2: typography-config-level(subtitle2),
+    $body-1: typography-config-level(body1),
+    $body-2: typography-config-level(body2),
+    $caption: typography-config-level(caption),
+    $button: typography-config-level(button),
+    $overline: typography-config-level(overline),
 );
 
 // The warn palette is optional (defaults to red).
@@ -42,11 +66,12 @@ $menu-chia-theme: mat.define-dark-theme(
     box-sizing: border-box;
 }
 
+@include mat.typography-hierarchy($menu-chia-typography);
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($menu-chia-theme);
-@include mat.typography-hierarchy($menu-chia-typography);
 
 /* You can add global styles to this file, and also import other style files */
 html,
@@ -60,7 +85,8 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
 
-    // remove extra letter spacing in buttons
-    --mdc-typography-button-letter-spacing: ;
+.darker-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
 }

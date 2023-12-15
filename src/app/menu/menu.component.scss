@@ -1,5 +1,36 @@
 @use '_breakpoints' as *;
 
+:host {
+    display: grid;
+    grid-template-rows: 0 minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+        'bar'
+        'main';
+}
+
+.progress-bar {
+    grid-area: bar;
+    z-index: 2;
+}
+
+.mat-drawer-container {
+    grid-area: main;
+}
+
+.mat-drawer-container,
+.mat-drawer-content {
+    overflow: unset;
+}
+
+.mat-drawer {
+    overflow: unset;
+
+    > ::ng-deep.mat-drawer-inner-container {
+        overflow: unset;
+    }
+}
+
 main {
     display: flex;
     justify-content: center;

@@ -8,9 +8,11 @@
                 </button>
             </div>
         </div>
-        <img
-            [src]="'assets/menu/compressed/' + item.imagePath + '-1024.avif'"
-            class="image"
-        />
+
+        <div class="placeholder">
+            <mat-spinner color="accent" />
+        </div>
+
+        <img [src]="item.imagePath | compressedMenuImage" class="image" />
     }
 </ng-template>

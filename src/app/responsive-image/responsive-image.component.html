@@ -1,52 +1,17 @@
 <picture>
-    <!-- avif -->
-    <source
-        [srcset]="getThumbnail(256, 'avif')"
-        media="(max-width: 512px)"
-        type="image/avif"
+    @for (mediaType of mediaTypes; track mediaType) {
+        @for (res of [256, 512, 1024]; track res) {
+            <source
+                [srcset]="path | compressedMenuImage: res : mediaType.extension"
+                [media]="'(max-width: ' + res * 2 + 'px)'"
+                [type]="mediaType.type"
+            />
+        }
+    }
+
+    <img
+        [alt]="alt"
+        [src]="path | compressedMenuImage: 1024 : 'jpg'"
+        loading="lazy"
     />
-    <source
-        [srcset]="getThumbnail(512, 'avif')"
-        media="(max-width: 1024px)"
-        type="image/avif"
-    />
-    <source
-        [srcset]="getThumbnail(1024, 'avif')"
-        media="(max-width: 2048px)"
-        type="image/avif"
-    />
-    <!-- webp -->
-    <source
-        [srcset]="getThumbnail(256, 'webp')"
-        media="(max-width: 512px)"
-        type="image/webp"
-    />
-    <source
-        [srcset]="getThumbnail(512, 'webp')"
-        media="(max-width: 1024px)"
-        type="image/webp"
-    />
-    <source
-        [srcset]="getThumbnail(1024, 'webp')"
-        media="(max-width: 2048px)"
-        type="image/webp"
-    />
-    <!-- jpeg -->
-    <source
-        [srcset]="getThumbnail(256, 'jpg')"
-        media="(max-width: 512px)"
-        type="image/jpeg"
-    />
-    <source
-        [srcset]="getThumbnail(512, 'jpg')"
-        media="(max-width: 1024px)"
-        type="image/jpeg"
-    />
-    <source
-        [srcset]="getThumbnail(1024, 'jpg')"
-        media="(max-width: 2048px)"
-        type="image/jpeg"
-    />
-    <!-- original -->
-    <img [src]="getThumbnail(1024, 'jpg')" />
 </picture>

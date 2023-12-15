@@ -5,11 +5,15 @@ import {
     Input,
     OnDestroy,
 } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { MaterialModule } from 'src/material/material.module';
+import { MenuItemComponent } from '../menu-item/menu-item.component';
 import { MenuSection } from '../models/menu-section';
 
 @Component({
     selector: 'app-menu-section',
+    standalone: true,
+    imports: [RouterModule, MaterialModule, MenuItemComponent],
     templateUrl: './menu-section.component.html',
     styleUrls: ['./menu-section.component.scss'],
 })

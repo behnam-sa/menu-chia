@@ -11,12 +11,19 @@ import { Observable, combineLatest, map } from 'rxjs';
 import { MaterialModule } from 'src/material/material.module';
 import { Menu } from '../menu/models/menu';
 import { MenuItem } from '../menu/models/menu-item';
+import { CompressedMenuImagePipe } from '../menu/pipes/compressed-menu-image.pipe';
 import { MenuProvider } from '../menu/services/menu-provider.service';
+import { ResponsiveImageComponent } from '../responsive-image/responsive-image.component';
 
 @Component({
     selector: 'app-preview',
     standalone: true,
-    imports: [CommonModule, MaterialModule],
+    imports: [
+        CommonModule,
+        MaterialModule,
+        ResponsiveImageComponent,
+        CompressedMenuImagePipe,
+    ],
     templateUrl: './preview.component.html',
     styleUrl: './preview.component.scss',
 })
@@ -53,6 +60,7 @@ export class PreviewComponent implements AfterViewInit {
                 autoFocus: false,
                 maxWidth: '100vw',
                 maxHeight: '100vh',
+                backdropClass: 'darker-backdrop',
             });
 
             dialogRef.afterClosed().subscribe(() => {
@@ -62,19 +70,10 @@ export class PreviewComponent implements AfterViewInit {
     }
 
     private navigateBack() {
-        this.router.navigate(
-            [
-                '',
-                {
-                    outlets: {
-                        preview: null,
-                    },
-                },
-            ],
-            {
-                preserveFragment: true,
-            }
-        );
+        this.router.navigate(['', { outlets: { preview: null } }], {
+            preserveFragment: true,
+            replaceUrl: true,
+        });
     }
 
     private getMenuItem(

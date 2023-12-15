@@ -1,13 +1,20 @@
+$image-min-width: 350px;
+$image-min-height: 350px;
+
 .image {
     max-height: 100vh;
     max-width: 100vw;
+    min-width: $image-min-width;
+    min-height: $image-min-height;
     object-fit: contain;
+    z-index: 1;
 }
 
 .preview-top {
     max-height: 0;
     overflow: visible;
     position: relative;
+    z-index: 2;
 }
 
 .image-close-container {
@@ -30,4 +37,15 @@
     button {
         text-shadow: 0 0 6px black;
     }
+}
+
+.placeholder {
+    max-height: 0;
+    overflow: visible;
+    position: relative;
+    top: calc(($image-min-height + 50px) / 2);
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }

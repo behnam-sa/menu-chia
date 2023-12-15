@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { CustomIconRegistry } from 'src/material/services/custom-icon-registry.service';
 
 @Component({
@@ -8,14 +8,9 @@ import { CustomIconRegistry } from 'src/material/services/custom-icon-registry.s
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-    private window: Window;
+    protected readonly isProduction = environment.production;
 
-    constructor(
-        @Inject(DOCUMENT) private document: Document,
-        private customIconRegistry: CustomIconRegistry
-    ) {
-        this.window = document.defaultView!;
-    }
+    public constructor(private customIconRegistry: CustomIconRegistry) {}
 
     public ngOnInit(): void {
         this.customIconRegistry.addResolver();

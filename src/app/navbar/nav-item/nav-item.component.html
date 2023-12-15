@@ -1,0 +1,8 @@
+<div class="nav-item">
+    <button mat-button [class.mat-accent]="active" (click)="click.emit()">
+        <div class="button-content">
+            <mat-icon [svgIcon]="'category:' + section.iconPath" class="icon" />
+            <span class="caption">{{ section.caption }}</span>
+        </div>
+    </button>
+</div>
