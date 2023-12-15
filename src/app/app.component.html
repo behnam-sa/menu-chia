@@ -10,14 +10,7 @@
         </div>
     </mat-toolbar>
 
-    <mat-drawer-container>
-        <mat-drawer mode="side" opened position="end">
-            <app-navbar />
-        </mat-drawer>
-        <mat-drawer-content>
-            <router-outlet hidden />
-        </mat-drawer-content>
-    </mat-drawer-container>
+    <router-outlet hidden />
 
     <footer>
         <mat-toolbar color="primary" class="footer">

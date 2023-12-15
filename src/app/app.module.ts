@@ -9,7 +9,6 @@ import { AnalyticsModule } from './analytics/analytics.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactLinkComponent } from './contact-link/contact-link.component';
-import { NavbarComponent } from './navbar/navbar.component';
 
 registerLocaleData(localeFa);
 
@@ -21,7 +20,6 @@ registerLocaleData(localeFa);
         BrowserAnimationsModule,
         HttpClientModule,
         MaterialModule,
-        NavbarComponent,
         ContactLinkComponent,
         AnalyticsModule,
     ],

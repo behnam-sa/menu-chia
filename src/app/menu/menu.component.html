@@ -1,11 +1,22 @@
-<main>
-    @if (menu$ | async; as menu) {
-        <div class="menu-container">
-            <div class="menu-sections">
-                @for (section of menu.sections; track section) {
-                    <app-menu-section [section]="section" />
-                }
-            </div>
-        </div>
-    }
-</main>
+@if (!(menu$ | async)) {
+    <mat-progress-bar mode="query" class="progress-bar" />
+}
+
+<mat-drawer-container>
+    <mat-drawer mode="side" opened position="end">
+        <app-navbar />
+    </mat-drawer>
+    <mat-drawer-content>
+        <main>
+            @if (menu$ | async; as menu) {
+                <div class="menu-container">
+                    <div class="menu-sections">
+                        @for (section of menu.sections; track section) {
+                            <app-menu-section [section]="section" />
+                        }
+                    </div>
+                </div>
+            }
+        </main>
+    </mat-drawer-content>
+</mat-drawer-container>
